@@ -30,7 +30,7 @@ body {
      align-items: center;
  }
 
- label,input {
+ label,input,button {
      font-size: 16px;
      line-height: 1.5;
  }
@@ -52,6 +52,6 @@ body {
  }
 
  button {
-     width:50%;
+     width:70%;
      margin:0 auto;
  }

@@ -17,8 +17,13 @@
             <label for="email">Email</label>
             <input type="email" id="email" name="email">
             <error-output class="email-error" for="email"></error-output>
-          </div>
+        </div>
         <div>
+           <label for="mobNo">MobileNo:</label>
+           <input type="mobNo" id="mobNo" name="mobNo">
+           <error-outtput class="mobNo-error" for="mobNo"></error-outtput> 
+        </div> 
+        <div> 
             <button>Submit</button>
         </div>
     </form>
@@ -40,6 +45,16 @@
                 emailError.textContent="";
        else emailError.textContent="Email is Incorrect";
        });
+
+     const mobileNumber = document.querySelector('#mobNo');
+     const mobileError = document.querySelector('.mobNo-error');
+     tel.addEventListener('input', function(){
+     let mobileRegex = RegExp('^[1-9]{2}[ ]{1}[0-9]{10}$')
+     if(mobileRegex.test(mobileNumber.value))
+        mobileError.textContent="";
+     else
+     mobileError.textContent="invalid mobile number";
+     });
 
     </script>
     </body>
