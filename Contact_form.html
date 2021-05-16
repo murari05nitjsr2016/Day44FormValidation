@@ -9,10 +9,15 @@
         <form>
         <header class="headerContainer"><h1>Contact Details </h1></header>
         <div>
-            <label for="text">First Name</label>
-            <input type="text" id ="text" name ="text">
+            <label for = "text">First Name</label>
+            <input type = "text" id ="text" name ="text" >
             <error-output class ="text-error" for ="text"></error-output>
         </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <error-output class="email-error" for="email"></error-output>
+          </div>
         <div>
             <button>Submit</button>
         </div>
@@ -26,6 +31,16 @@
            textError.textContent = "";
            else textError.textContent = "First Name is Incorrect";
        });
+
+       const email=document.querySelector("#email");
+       const emailError=document.querySelector(".email-error");
+       email.addEventListener('input',function(){
+       let emailRegex=RegExp('^[a-zA-Z0-9+-]+(?:\\.[a-zA-Z0-9-]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z]{2,}){1,2}$');
+       if(emailRegex.test(email.value))
+                emailError.textContent="";
+       else emailError.textContent="Email is Incorrect";
+       });
+
     </script>
     </body>
 </html>
